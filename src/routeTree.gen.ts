@@ -9,38 +9,438 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WalletRouteImport } from './routes/wallet'
+import { Route as TrackRouteImport } from './routes/track'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RiderIndexRouteImport } from './routes/rider.index'
+import { Route as Adminv1IndexRouteImport } from './routes/adminv1.index'
+import { Route as RiderProfileRouteImport } from './routes/rider.profile'
+import { Route as RiderNavigationRouteImport } from './routes/rider.navigation'
+import { Route as RiderLoginRouteImport } from './routes/rider.login'
+import { Route as RiderJobsRouteImport } from './routes/rider.jobs'
+import { Route as RiderHistoryRouteImport } from './routes/rider.history'
+import { Route as RiderDashboardRouteImport } from './routes/rider.dashboard'
+import { Route as Adminv1UsersRouteImport } from './routes/adminv1.users'
+import { Route as Adminv1RidersRouteImport } from './routes/adminv1.riders'
+import { Route as Adminv1LoginRouteImport } from './routes/adminv1.login'
+import { Route as Adminv1DashboardRouteImport } from './routes/adminv1.dashboard'
 
+const WalletRoute = WalletRouteImport.update({
+  id: '/wallet',
+  path: '/wallet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrackRoute = TrackRouteImport.update({
+  id: '/track',
+  path: '/track',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RiderIndexRoute = RiderIndexRouteImport.update({
+  id: '/rider/',
+  path: '/rider/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1IndexRoute = Adminv1IndexRouteImport.update({
+  id: '/adminv1/',
+  path: '/adminv1/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderProfileRoute = RiderProfileRouteImport.update({
+  id: '/rider/profile',
+  path: '/rider/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderNavigationRoute = RiderNavigationRouteImport.update({
+  id: '/rider/navigation',
+  path: '/rider/navigation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderLoginRoute = RiderLoginRouteImport.update({
+  id: '/rider/login',
+  path: '/rider/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderJobsRoute = RiderJobsRouteImport.update({
+  id: '/rider/jobs',
+  path: '/rider/jobs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderHistoryRoute = RiderHistoryRouteImport.update({
+  id: '/rider/history',
+  path: '/rider/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderDashboardRoute = RiderDashboardRouteImport.update({
+  id: '/rider/dashboard',
+  path: '/rider/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1UsersRoute = Adminv1UsersRouteImport.update({
+  id: '/adminv1/users',
+  path: '/adminv1/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1RidersRoute = Adminv1RidersRouteImport.update({
+  id: '/adminv1/riders',
+  path: '/adminv1/riders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1LoginRoute = Adminv1LoginRouteImport.update({
+  id: '/adminv1/login',
+  path: '/adminv1/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1DashboardRoute = Adminv1DashboardRouteImport.update({
+  id: '/adminv1/dashboard',
+  path: '/adminv1/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/dashboard': typeof DashboardRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/history': typeof HistoryRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
+  '/support': typeof SupportRoute
+  '/track': typeof TrackRoute
+  '/wallet': typeof WalletRoute
+  '/adminv1/dashboard': typeof Adminv1DashboardRoute
+  '/adminv1/login': typeof Adminv1LoginRoute
+  '/adminv1/riders': typeof Adminv1RidersRoute
+  '/adminv1/users': typeof Adminv1UsersRoute
+  '/rider/dashboard': typeof RiderDashboardRoute
+  '/rider/history': typeof RiderHistoryRoute
+  '/rider/jobs': typeof RiderJobsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/navigation': typeof RiderNavigationRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/adminv1/': typeof Adminv1IndexRoute
+  '/rider/': typeof RiderIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/dashboard': typeof DashboardRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/history': typeof HistoryRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
+  '/support': typeof SupportRoute
+  '/track': typeof TrackRoute
+  '/wallet': typeof WalletRoute
+  '/adminv1/dashboard': typeof Adminv1DashboardRoute
+  '/adminv1/login': typeof Adminv1LoginRoute
+  '/adminv1/riders': typeof Adminv1RidersRoute
+  '/adminv1/users': typeof Adminv1UsersRoute
+  '/rider/dashboard': typeof RiderDashboardRoute
+  '/rider/history': typeof RiderHistoryRoute
+  '/rider/jobs': typeof RiderJobsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/navigation': typeof RiderNavigationRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/adminv1': typeof Adminv1IndexRoute
+  '/rider': typeof RiderIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/dashboard': typeof DashboardRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/history': typeof HistoryRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
+  '/support': typeof SupportRoute
+  '/track': typeof TrackRoute
+  '/wallet': typeof WalletRoute
+  '/adminv1/dashboard': typeof Adminv1DashboardRoute
+  '/adminv1/login': typeof Adminv1LoginRoute
+  '/adminv1/riders': typeof Adminv1RidersRoute
+  '/adminv1/users': typeof Adminv1UsersRoute
+  '/rider/dashboard': typeof RiderDashboardRoute
+  '/rider/history': typeof RiderHistoryRoute
+  '/rider/jobs': typeof RiderJobsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/navigation': typeof RiderNavigationRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/adminv1/': typeof Adminv1IndexRoute
+  '/rider/': typeof RiderIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/book'
+    | '/dashboard'
+    | '/forgot-password'
+    | '/history'
+    | '/login'
+    | '/notifications'
+    | '/profile'
+    | '/register'
+    | '/settings'
+    | '/support'
+    | '/track'
+    | '/wallet'
+    | '/adminv1/dashboard'
+    | '/adminv1/login'
+    | '/adminv1/riders'
+    | '/adminv1/users'
+    | '/rider/dashboard'
+    | '/rider/history'
+    | '/rider/jobs'
+    | '/rider/login'
+    | '/rider/navigation'
+    | '/rider/profile'
+    | '/adminv1/'
+    | '/rider/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/book'
+    | '/dashboard'
+    | '/forgot-password'
+    | '/history'
+    | '/login'
+    | '/notifications'
+    | '/profile'
+    | '/register'
+    | '/settings'
+    | '/support'
+    | '/track'
+    | '/wallet'
+    | '/adminv1/dashboard'
+    | '/adminv1/login'
+    | '/adminv1/riders'
+    | '/adminv1/users'
+    | '/rider/dashboard'
+    | '/rider/history'
+    | '/rider/jobs'
+    | '/rider/login'
+    | '/rider/navigation'
+    | '/rider/profile'
+    | '/adminv1'
+    | '/rider'
+  id:
+    | '__root__'
+    | '/'
+    | '/book'
+    | '/dashboard'
+    | '/forgot-password'
+    | '/history'
+    | '/login'
+    | '/notifications'
+    | '/profile'
+    | '/register'
+    | '/settings'
+    | '/support'
+    | '/track'
+    | '/wallet'
+    | '/adminv1/dashboard'
+    | '/adminv1/login'
+    | '/adminv1/riders'
+    | '/adminv1/users'
+    | '/rider/dashboard'
+    | '/rider/history'
+    | '/rider/jobs'
+    | '/rider/login'
+    | '/rider/navigation'
+    | '/rider/profile'
+    | '/adminv1/'
+    | '/rider/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRoute
+  DashboardRoute: typeof DashboardRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  HistoryRoute: typeof HistoryRoute
+  LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
+  ProfileRoute: typeof ProfileRoute
+  RegisterRoute: typeof RegisterRoute
+  SettingsRoute: typeof SettingsRoute
+  SupportRoute: typeof SupportRoute
+  TrackRoute: typeof TrackRoute
+  WalletRoute: typeof WalletRoute
+  Adminv1DashboardRoute: typeof Adminv1DashboardRoute
+  Adminv1LoginRoute: typeof Adminv1LoginRoute
+  Adminv1RidersRoute: typeof Adminv1RidersRoute
+  Adminv1UsersRoute: typeof Adminv1UsersRoute
+  RiderDashboardRoute: typeof RiderDashboardRoute
+  RiderHistoryRoute: typeof RiderHistoryRoute
+  RiderJobsRoute: typeof RiderJobsRoute
+  RiderLoginRoute: typeof RiderLoginRoute
+  RiderNavigationRoute: typeof RiderNavigationRoute
+  RiderProfileRoute: typeof RiderProfileRoute
+  Adminv1IndexRoute: typeof Adminv1IndexRoute
+  RiderIndexRoute: typeof RiderIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wallet': {
+      id: '/wallet'
+      path: '/wallet'
+      fullPath: '/wallet'
+      preLoaderRoute: typeof WalletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/track': {
+      id: '/track'
+      path: '/track'
+      fullPath: '/track'
+      preLoaderRoute: typeof TrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +448,120 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rider/': {
+      id: '/rider/'
+      path: '/rider'
+      fullPath: '/rider/'
+      preLoaderRoute: typeof RiderIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/': {
+      id: '/adminv1/'
+      path: '/adminv1'
+      fullPath: '/adminv1/'
+      preLoaderRoute: typeof Adminv1IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/profile': {
+      id: '/rider/profile'
+      path: '/rider/profile'
+      fullPath: '/rider/profile'
+      preLoaderRoute: typeof RiderProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/navigation': {
+      id: '/rider/navigation'
+      path: '/rider/navigation'
+      fullPath: '/rider/navigation'
+      preLoaderRoute: typeof RiderNavigationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/login': {
+      id: '/rider/login'
+      path: '/rider/login'
+      fullPath: '/rider/login'
+      preLoaderRoute: typeof RiderLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/jobs': {
+      id: '/rider/jobs'
+      path: '/rider/jobs'
+      fullPath: '/rider/jobs'
+      preLoaderRoute: typeof RiderJobsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/history': {
+      id: '/rider/history'
+      path: '/rider/history'
+      fullPath: '/rider/history'
+      preLoaderRoute: typeof RiderHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/dashboard': {
+      id: '/rider/dashboard'
+      path: '/rider/dashboard'
+      fullPath: '/rider/dashboard'
+      preLoaderRoute: typeof RiderDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/users': {
+      id: '/adminv1/users'
+      path: '/adminv1/users'
+      fullPath: '/adminv1/users'
+      preLoaderRoute: typeof Adminv1UsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/riders': {
+      id: '/adminv1/riders'
+      path: '/adminv1/riders'
+      fullPath: '/adminv1/riders'
+      preLoaderRoute: typeof Adminv1RidersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/login': {
+      id: '/adminv1/login'
+      path: '/adminv1/login'
+      fullPath: '/adminv1/login'
+      preLoaderRoute: typeof Adminv1LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/dashboard': {
+      id: '/adminv1/dashboard'
+      path: '/adminv1/dashboard'
+      fullPath: '/adminv1/dashboard'
+      preLoaderRoute: typeof Adminv1DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRoute,
+  DashboardRoute: DashboardRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  HistoryRoute: HistoryRoute,
+  LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
+  ProfileRoute: ProfileRoute,
+  RegisterRoute: RegisterRoute,
+  SettingsRoute: SettingsRoute,
+  SupportRoute: SupportRoute,
+  TrackRoute: TrackRoute,
+  WalletRoute: WalletRoute,
+  Adminv1DashboardRoute: Adminv1DashboardRoute,
+  Adminv1LoginRoute: Adminv1LoginRoute,
+  Adminv1RidersRoute: Adminv1RidersRoute,
+  Adminv1UsersRoute: Adminv1UsersRoute,
+  RiderDashboardRoute: RiderDashboardRoute,
+  RiderHistoryRoute: RiderHistoryRoute,
+  RiderJobsRoute: RiderJobsRoute,
+  RiderLoginRoute: RiderLoginRoute,
+  RiderNavigationRoute: RiderNavigationRoute,
+  RiderProfileRoute: RiderProfileRoute,
+  Adminv1IndexRoute: Adminv1IndexRoute,
+  RiderIndexRoute: RiderIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
