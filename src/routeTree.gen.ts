@@ -22,6 +22,13 @@ import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RiderIndexRouteImport } from './routes/rider.index'
+import { Route as RiderProfileRouteImport } from './routes/rider.profile'
+import { Route as RiderNavigationRouteImport } from './routes/rider.navigation'
+import { Route as RiderLoginRouteImport } from './routes/rider.login'
+import { Route as RiderJobsRouteImport } from './routes/rider.jobs'
+import { Route as RiderHistoryRouteImport } from './routes/rider.history'
+import { Route as RiderDashboardRouteImport } from './routes/rider.dashboard'
 
 const WalletRoute = WalletRouteImport.update({
   id: '/wallet',
@@ -88,6 +95,41 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RiderIndexRoute = RiderIndexRouteImport.update({
+  id: '/rider/',
+  path: '/rider/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderProfileRoute = RiderProfileRouteImport.update({
+  id: '/rider/profile',
+  path: '/rider/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderNavigationRoute = RiderNavigationRouteImport.update({
+  id: '/rider/navigation',
+  path: '/rider/navigation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderLoginRoute = RiderLoginRouteImport.update({
+  id: '/rider/login',
+  path: '/rider/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderJobsRoute = RiderJobsRouteImport.update({
+  id: '/rider/jobs',
+  path: '/rider/jobs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderHistoryRoute = RiderHistoryRouteImport.update({
+  id: '/rider/history',
+  path: '/rider/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderDashboardRoute = RiderDashboardRouteImport.update({
+  id: '/rider/dashboard',
+  path: '/rider/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -103,6 +145,13 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/track': typeof TrackRoute
   '/wallet': typeof WalletRoute
+  '/rider/dashboard': typeof RiderDashboardRoute
+  '/rider/history': typeof RiderHistoryRoute
+  '/rider/jobs': typeof RiderJobsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/navigation': typeof RiderNavigationRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/rider/': typeof RiderIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -118,6 +167,13 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/track': typeof TrackRoute
   '/wallet': typeof WalletRoute
+  '/rider/dashboard': typeof RiderDashboardRoute
+  '/rider/history': typeof RiderHistoryRoute
+  '/rider/jobs': typeof RiderJobsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/navigation': typeof RiderNavigationRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/rider': typeof RiderIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -134,6 +190,13 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/track': typeof TrackRoute
   '/wallet': typeof WalletRoute
+  '/rider/dashboard': typeof RiderDashboardRoute
+  '/rider/history': typeof RiderHistoryRoute
+  '/rider/jobs': typeof RiderJobsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/navigation': typeof RiderNavigationRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/rider/': typeof RiderIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +214,13 @@ export interface FileRouteTypes {
     | '/support'
     | '/track'
     | '/wallet'
+    | '/rider/dashboard'
+    | '/rider/history'
+    | '/rider/jobs'
+    | '/rider/login'
+    | '/rider/navigation'
+    | '/rider/profile'
+    | '/rider/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -166,6 +236,13 @@ export interface FileRouteTypes {
     | '/support'
     | '/track'
     | '/wallet'
+    | '/rider/dashboard'
+    | '/rider/history'
+    | '/rider/jobs'
+    | '/rider/login'
+    | '/rider/navigation'
+    | '/rider/profile'
+    | '/rider'
   id:
     | '__root__'
     | '/'
@@ -181,6 +258,13 @@ export interface FileRouteTypes {
     | '/support'
     | '/track'
     | '/wallet'
+    | '/rider/dashboard'
+    | '/rider/history'
+    | '/rider/jobs'
+    | '/rider/login'
+    | '/rider/navigation'
+    | '/rider/profile'
+    | '/rider/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -197,6 +281,13 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TrackRoute: typeof TrackRoute
   WalletRoute: typeof WalletRoute
+  RiderDashboardRoute: typeof RiderDashboardRoute
+  RiderHistoryRoute: typeof RiderHistoryRoute
+  RiderJobsRoute: typeof RiderJobsRoute
+  RiderLoginRoute: typeof RiderLoginRoute
+  RiderNavigationRoute: typeof RiderNavigationRoute
+  RiderProfileRoute: typeof RiderProfileRoute
+  RiderIndexRoute: typeof RiderIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -292,6 +383,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rider/': {
+      id: '/rider/'
+      path: '/rider'
+      fullPath: '/rider/'
+      preLoaderRoute: typeof RiderIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/profile': {
+      id: '/rider/profile'
+      path: '/rider/profile'
+      fullPath: '/rider/profile'
+      preLoaderRoute: typeof RiderProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/navigation': {
+      id: '/rider/navigation'
+      path: '/rider/navigation'
+      fullPath: '/rider/navigation'
+      preLoaderRoute: typeof RiderNavigationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/login': {
+      id: '/rider/login'
+      path: '/rider/login'
+      fullPath: '/rider/login'
+      preLoaderRoute: typeof RiderLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/jobs': {
+      id: '/rider/jobs'
+      path: '/rider/jobs'
+      fullPath: '/rider/jobs'
+      preLoaderRoute: typeof RiderJobsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/history': {
+      id: '/rider/history'
+      path: '/rider/history'
+      fullPath: '/rider/history'
+      preLoaderRoute: typeof RiderHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/dashboard': {
+      id: '/rider/dashboard'
+      path: '/rider/dashboard'
+      fullPath: '/rider/dashboard'
+      preLoaderRoute: typeof RiderDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -309,6 +449,13 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   TrackRoute: TrackRoute,
   WalletRoute: WalletRoute,
+  RiderDashboardRoute: RiderDashboardRoute,
+  RiderHistoryRoute: RiderHistoryRoute,
+  RiderJobsRoute: RiderJobsRoute,
+  RiderLoginRoute: RiderLoginRoute,
+  RiderNavigationRoute: RiderNavigationRoute,
+  RiderProfileRoute: RiderProfileRoute,
+  RiderIndexRoute: RiderIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
