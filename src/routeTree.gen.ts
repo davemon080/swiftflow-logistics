@@ -23,12 +23,17 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RiderIndexRouteImport } from './routes/rider.index'
+import { Route as Adminv1IndexRouteImport } from './routes/adminv1.index'
 import { Route as RiderProfileRouteImport } from './routes/rider.profile'
 import { Route as RiderNavigationRouteImport } from './routes/rider.navigation'
 import { Route as RiderLoginRouteImport } from './routes/rider.login'
 import { Route as RiderJobsRouteImport } from './routes/rider.jobs'
 import { Route as RiderHistoryRouteImport } from './routes/rider.history'
 import { Route as RiderDashboardRouteImport } from './routes/rider.dashboard'
+import { Route as Adminv1UsersRouteImport } from './routes/adminv1.users'
+import { Route as Adminv1RidersRouteImport } from './routes/adminv1.riders'
+import { Route as Adminv1LoginRouteImport } from './routes/adminv1.login'
+import { Route as Adminv1DashboardRouteImport } from './routes/adminv1.dashboard'
 
 const WalletRoute = WalletRouteImport.update({
   id: '/wallet',
@@ -100,6 +105,11 @@ const RiderIndexRoute = RiderIndexRouteImport.update({
   path: '/rider/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Adminv1IndexRoute = Adminv1IndexRouteImport.update({
+  id: '/adminv1/',
+  path: '/adminv1/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RiderProfileRoute = RiderProfileRouteImport.update({
   id: '/rider/profile',
   path: '/rider/profile',
@@ -130,6 +140,26 @@ const RiderDashboardRoute = RiderDashboardRouteImport.update({
   path: '/rider/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Adminv1UsersRoute = Adminv1UsersRouteImport.update({
+  id: '/adminv1/users',
+  path: '/adminv1/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1RidersRoute = Adminv1RidersRouteImport.update({
+  id: '/adminv1/riders',
+  path: '/adminv1/riders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1LoginRoute = Adminv1LoginRouteImport.update({
+  id: '/adminv1/login',
+  path: '/adminv1/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Adminv1DashboardRoute = Adminv1DashboardRouteImport.update({
+  id: '/adminv1/dashboard',
+  path: '/adminv1/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -145,12 +175,17 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/track': typeof TrackRoute
   '/wallet': typeof WalletRoute
+  '/adminv1/dashboard': typeof Adminv1DashboardRoute
+  '/adminv1/login': typeof Adminv1LoginRoute
+  '/adminv1/riders': typeof Adminv1RidersRoute
+  '/adminv1/users': typeof Adminv1UsersRoute
   '/rider/dashboard': typeof RiderDashboardRoute
   '/rider/history': typeof RiderHistoryRoute
   '/rider/jobs': typeof RiderJobsRoute
   '/rider/login': typeof RiderLoginRoute
   '/rider/navigation': typeof RiderNavigationRoute
   '/rider/profile': typeof RiderProfileRoute
+  '/adminv1/': typeof Adminv1IndexRoute
   '/rider/': typeof RiderIndexRoute
 }
 export interface FileRoutesByTo {
@@ -167,12 +202,17 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/track': typeof TrackRoute
   '/wallet': typeof WalletRoute
+  '/adminv1/dashboard': typeof Adminv1DashboardRoute
+  '/adminv1/login': typeof Adminv1LoginRoute
+  '/adminv1/riders': typeof Adminv1RidersRoute
+  '/adminv1/users': typeof Adminv1UsersRoute
   '/rider/dashboard': typeof RiderDashboardRoute
   '/rider/history': typeof RiderHistoryRoute
   '/rider/jobs': typeof RiderJobsRoute
   '/rider/login': typeof RiderLoginRoute
   '/rider/navigation': typeof RiderNavigationRoute
   '/rider/profile': typeof RiderProfileRoute
+  '/adminv1': typeof Adminv1IndexRoute
   '/rider': typeof RiderIndexRoute
 }
 export interface FileRoutesById {
@@ -190,12 +230,17 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/track': typeof TrackRoute
   '/wallet': typeof WalletRoute
+  '/adminv1/dashboard': typeof Adminv1DashboardRoute
+  '/adminv1/login': typeof Adminv1LoginRoute
+  '/adminv1/riders': typeof Adminv1RidersRoute
+  '/adminv1/users': typeof Adminv1UsersRoute
   '/rider/dashboard': typeof RiderDashboardRoute
   '/rider/history': typeof RiderHistoryRoute
   '/rider/jobs': typeof RiderJobsRoute
   '/rider/login': typeof RiderLoginRoute
   '/rider/navigation': typeof RiderNavigationRoute
   '/rider/profile': typeof RiderProfileRoute
+  '/adminv1/': typeof Adminv1IndexRoute
   '/rider/': typeof RiderIndexRoute
 }
 export interface FileRouteTypes {
@@ -214,12 +259,17 @@ export interface FileRouteTypes {
     | '/support'
     | '/track'
     | '/wallet'
+    | '/adminv1/dashboard'
+    | '/adminv1/login'
+    | '/adminv1/riders'
+    | '/adminv1/users'
     | '/rider/dashboard'
     | '/rider/history'
     | '/rider/jobs'
     | '/rider/login'
     | '/rider/navigation'
     | '/rider/profile'
+    | '/adminv1/'
     | '/rider/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -236,12 +286,17 @@ export interface FileRouteTypes {
     | '/support'
     | '/track'
     | '/wallet'
+    | '/adminv1/dashboard'
+    | '/adminv1/login'
+    | '/adminv1/riders'
+    | '/adminv1/users'
     | '/rider/dashboard'
     | '/rider/history'
     | '/rider/jobs'
     | '/rider/login'
     | '/rider/navigation'
     | '/rider/profile'
+    | '/adminv1'
     | '/rider'
   id:
     | '__root__'
@@ -258,12 +313,17 @@ export interface FileRouteTypes {
     | '/support'
     | '/track'
     | '/wallet'
+    | '/adminv1/dashboard'
+    | '/adminv1/login'
+    | '/adminv1/riders'
+    | '/adminv1/users'
     | '/rider/dashboard'
     | '/rider/history'
     | '/rider/jobs'
     | '/rider/login'
     | '/rider/navigation'
     | '/rider/profile'
+    | '/adminv1/'
     | '/rider/'
   fileRoutesById: FileRoutesById
 }
@@ -281,12 +341,17 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TrackRoute: typeof TrackRoute
   WalletRoute: typeof WalletRoute
+  Adminv1DashboardRoute: typeof Adminv1DashboardRoute
+  Adminv1LoginRoute: typeof Adminv1LoginRoute
+  Adminv1RidersRoute: typeof Adminv1RidersRoute
+  Adminv1UsersRoute: typeof Adminv1UsersRoute
   RiderDashboardRoute: typeof RiderDashboardRoute
   RiderHistoryRoute: typeof RiderHistoryRoute
   RiderJobsRoute: typeof RiderJobsRoute
   RiderLoginRoute: typeof RiderLoginRoute
   RiderNavigationRoute: typeof RiderNavigationRoute
   RiderProfileRoute: typeof RiderProfileRoute
+  Adminv1IndexRoute: typeof Adminv1IndexRoute
   RiderIndexRoute: typeof RiderIndexRoute
 }
 
@@ -390,6 +455,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RiderIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/adminv1/': {
+      id: '/adminv1/'
+      path: '/adminv1'
+      fullPath: '/adminv1/'
+      preLoaderRoute: typeof Adminv1IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/rider/profile': {
       id: '/rider/profile'
       path: '/rider/profile'
@@ -432,6 +504,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RiderDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/adminv1/users': {
+      id: '/adminv1/users'
+      path: '/adminv1/users'
+      fullPath: '/adminv1/users'
+      preLoaderRoute: typeof Adminv1UsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/riders': {
+      id: '/adminv1/riders'
+      path: '/adminv1/riders'
+      fullPath: '/adminv1/riders'
+      preLoaderRoute: typeof Adminv1RidersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/login': {
+      id: '/adminv1/login'
+      path: '/adminv1/login'
+      fullPath: '/adminv1/login'
+      preLoaderRoute: typeof Adminv1LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminv1/dashboard': {
+      id: '/adminv1/dashboard'
+      path: '/adminv1/dashboard'
+      fullPath: '/adminv1/dashboard'
+      preLoaderRoute: typeof Adminv1DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -449,12 +549,17 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   TrackRoute: TrackRoute,
   WalletRoute: WalletRoute,
+  Adminv1DashboardRoute: Adminv1DashboardRoute,
+  Adminv1LoginRoute: Adminv1LoginRoute,
+  Adminv1RidersRoute: Adminv1RidersRoute,
+  Adminv1UsersRoute: Adminv1UsersRoute,
   RiderDashboardRoute: RiderDashboardRoute,
   RiderHistoryRoute: RiderHistoryRoute,
   RiderJobsRoute: RiderJobsRoute,
   RiderLoginRoute: RiderLoginRoute,
   RiderNavigationRoute: RiderNavigationRoute,
   RiderProfileRoute: RiderProfileRoute,
+  Adminv1IndexRoute: Adminv1IndexRoute,
   RiderIndexRoute: RiderIndexRoute,
 }
 export const routeTree = rootRouteImport
