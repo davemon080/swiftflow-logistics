@@ -3,8 +3,10 @@ import { AuthShell } from "@/components/brand/AuthShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/forgot-password")({
   head: () => ({ meta: [{ title: "Reset password — Swift" }] }),
@@ -12,20 +14,39 @@ export const Route = createFileRoute("/forgot-password")({
 });
 
 function Forgot() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + "/reset-password",
+    });
+    setLoading(false);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    setSent(true);
+  };
+
   return (
-    <AuthShell title="Forgot password?" subtitle="We'll send you a reset link." footer={<>Remember it? <Link to="/login" className="font-semibold text-brand">Sign in</Link></>}>
+    <AuthShell title="Reset password" subtitle="We'll email you a link to set a new one." footer={<Link to="/login" className="font-semibold text-brand">Back to sign in</Link>}>
       {sent ? (
-        <div className="rounded-2xl border border-success/30 bg-success/10 p-6 text-center">
-          <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-success text-success-foreground"><Mail className="h-5 w-5" /></div>
-          <p className="mt-4 font-semibold">Check your inbox</p>
-          <p className="mt-1 text-sm text-muted-foreground">We've sent password reset instructions to your email.</p>
-          <Button className="mt-4 rounded-full" variant="outline" onClick={() => setSent(false)}>Try another email</Button>
+        <div className="rounded-2xl border border-border bg-card p-5 text-center">
+          <p className="text-sm text-foreground">Check your inbox for a reset link.</p>
         </div>
       ) : (
-        <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="space-y-4">
-          <div><Label>Email</Label><Input type="email" placeholder="you@company.com" className="mt-1.5 h-11 rounded-xl" /></div>
-          <Button className="h-11 w-full rounded-xl bg-brand text-brand-foreground hover:bg-brand/90">Send reset link</Button>
+        <form className="space-y-4" onSubmit={onSubmit}>
+          <div>
+            <Label>Email</Label>
+            <Input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1.5 h-11 rounded-xl" />
+          </div>
+          <Button type="submit" disabled={loading} className="h-11 w-full rounded-xl bg-brand text-brand-foreground hover:bg-brand/90">
+            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Send reset link"}
+          </Button>
         </form>
       )}
     </AuthShell>
